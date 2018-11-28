@@ -2,7 +2,11 @@ import sys
 
 l = list(map(int,input().split()))
 s = int(input())
-overs = [0 for i in range(s+1)]
+
+overs = {}
+
+for i in range(s):
+    overs[i] = 0
 
 for i in range(len(l)):
     overs[l[i]%s] += 1
@@ -13,7 +17,7 @@ if l[0] >= 2:
     ans = "Yes"
 else:
     for i in range(1,(s-1)//2+1):
-        if overs[i] >= 1 and overs[-1-i] >= 1:
+        if overs[i] >= 1 and overs[s-i] >= 1:
             ans = "Yes"
             break
 

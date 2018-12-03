@@ -1,12 +1,8 @@
 l = list(map(int,input().split()))
-l.sort()
 
-fl = True
-for i in range(1,max(l)+1):
-    if l[i-1] != i:
-        print(i)
-        fl = False
-        break
+s = 0
 
-if fl:
-    print(max(l)+1)
+for i in range(len(l)):
+    s += l[i]
+
+print(((len(l)+1)*(len(l)+2))//2 - s)

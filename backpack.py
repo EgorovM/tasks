@@ -1,4 +1,4 @@
-n,W = list(map(int,input().split()))
+n,W = list(map(int, input().split()))
 
 A = [[[0] for i in range(n+1)] for i in range(W+1)]
 
@@ -6,7 +6,7 @@ w = []
 p = []
 
 for i in range(n):
-    a,b = list(map(int,input().split()))
+    a, b = list(map(int, input().split()))
 
     w.append(a)
     p.append(b)
@@ -45,6 +45,6 @@ for i in range(2,len(A[0])):
                 A[j][i].append(A[j][i-1][q])
 
 print(len(A[-1][-1])-1,A[-1][-1][0])
-
+A[-1][-1].sort()
 for i in range(1,len(A[-1][-1])):
     print(A[-1][-1][i],end = " ")
